@@ -1,0 +1,73 @@
+:root {
+    --bg-color: {{.Background}};
+    --fg-color: {{.White}};
+    --module-bg-color: {{.BlackBright}};
+    --highlight-color: {{.Magenta}};
+    --border-color: {{.BlackBright}};
+    --title-color: {{.Blue}}
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url(https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Medium.woff2) format("woff2"), url(https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Medium.woff) format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap
+}
+
+body,
+.container {
+    background-color: var(--bg-color);
+    color: var(--highlight-color);
+    font-weight: 700;
+    font-family: 'JetBrains Mono'
+}
+
+h2,
+a:hover {
+    color: var(--highlight-color)
+}
+
+a {
+    color: var(--fg-color);
+    text-decoration: none
+}
+
+h4 {
+    color: var(--title-color)
+}
+
+input {
+    background: var(--bg-color);
+    border: none;
+    outline: none;
+    color: var(--title-color);
+    width: 100%;
+    font-weight: 700
+}
+
+.btn {
+    color: var(--title-color);
+    background: var(--bg-color);
+    font-weight: 700
+}
+
+.btn:hover {
+    background: var(--title-color);
+    color: var(--bg-color);
+    font-weight: 700
+}
+
+.date-weather-info {
+    background: var(--bg-color)
+}
+
+.main {
+    width: 640px
+}
+
+.date-weather,
+.search,
+.col {
+    background: var(--border-color)
+}

@@ -1,0 +1,92 @@
+font:
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Regular
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: Bold
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Italic
+  bold_italic:
+    family: JetBrainsMono Nerd Font
+    style: Bold Italic
+
+window:
+  padding:
+    x: 20
+    y: 20
+  dynamic_padding: true
+
+colors:
+    primary:
+        background: "{{.Background}}"
+        foreground: "{{.Foreground}}"
+        dim_foreground: "{{.Foreground}}"
+        bright_foreground: "{{.Foreground}}"
+    cursor:
+        text: "{{.Background}}"
+        cursor: "{{.Magenta}}"
+    vi_mode_cursor:
+        text: "{{.Foreground}}"
+        cursor: "{{.Magenta}}"
+
+    # Search colors
+    search:
+        matches:
+            foreground: "{{.Background}}"
+            background: "{{.WhiteBright}}"
+        focused_match:
+            foreground: "{{.Background}}"
+            background: "{{.Green}}"
+        footer_bar:
+            foreground: "{{.Background}}"
+            background: "{{.WhiteBright}}"
+
+    # Keyboard regex hints
+    hints:
+        start:
+            foreground: "{{.Background}}"
+            background: "{{.Yellow}}"
+        end:
+            foreground: "{{.Background}}"
+            background: "{{.WhiteBright}}"
+
+    # Selection colors
+    selection:
+        text: "{{.Background}}"
+        background: "{{.Foreground}}"
+
+    normal:
+        black: "{{.Black}}"
+        red: "{{.Red}}"
+        green: "{{.Green}}"
+        yellow: "{{.Yellow}}"
+        blue: "{{.Blue}}"
+        magenta: "{{.Magenta}}"
+        cyan: "{{.Cyan}}"
+        white: "{{.White}}"
+
+    bright:
+        black: "{{.BlackBright}}"
+        red: "{{.RedBright}}"
+        green: "{{.GreenBright}}"
+        yellow: "{{.YellowBright}}"
+        blue: "{{.BlueBright}}"
+        magenta: "{{.MagentaBright}}"
+        cyan: "{{.CyanBright}}"
+        white: "{{.WhiteBright}}"
+
+    dim:
+        black: "{{.Black}}"
+        red: "{{.Red}}"
+        green: "{{.Green}}"
+        yellow: "{{.Yellow}}"
+        blue: "{{.Blue}}"
+        magenta: "{{.Magenta}}"
+        cyan: "{{.Cyan}}"
+        white: "{{.White}}"
+
+    indexed_colors:
+        - { index: 16, color: "#FAB387" }
+        - { index: 17, color: "#F5E0DC" }

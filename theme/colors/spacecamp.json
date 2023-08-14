@@ -1,0 +1,23 @@
+{
+  "name": "spacecamp",
+  "color": [
+    "#282828",
+    "#D71A1A",
+    "#57BA37",
+    "#F0D50C",
+    "#91AADF",
+    "#CF73E6",
+    "#B7CBF4",
+    "#DEDEDE",
+    "#262626",
+    "#FF0000",
+    "#D8FA3B",
+    "#E7C547",
+    "#B7CBF4",
+    "#B77EE0",
+    "#A9C1DE",
+    "#EEEEEE"
+  ],
+  "foreground": "#D0D0D0",
+  "background": "#121212"
+}

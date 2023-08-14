@@ -1,0 +1,274 @@
+set $mod Mod4
+
+# Monitors variable
+set $LAPTOP eDP-1
+# Home
+set $PRIMARY DP-2
+set $SECONDARY DP-3
+# Work
+#set $PRIMARY DP-2-1
+#set $SECONDARY DP-3
+
+
+font pango:JetBrainsMono Nerd Font 10
+
+exec_always --no-startup-id xrandr --output eDP-1 --off
+exec_always --no-startup-id xrandr --output $PRIMARY --mode 2560x1440 --rate 144.0
+exec_always --no-startup-id xrandr --output $SECONDARY --mode 1920x1080
+exec_always --no-startup-id xrandr --output $SECONDARY --left-of $PRIMARY
+
+
+# Startup application
+exec_always xset s off
+exec_always xset -dpms
+exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id picom --experimental-backends -b --config ~/.config/picom/picom.conf
+# Start XDG autostart .desktop files using dex. See also
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id nm-applet
+exec --no-startup-id start-pulseaudio-x11
+exec --no-startup-id pa-applet
+#exec --no-startup-id slack
+#exec --no-startup-id spotify
+#exec --no-startup-id firefox
+#exec --no-startup-id obsidian
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+
+# Keybindings for application
+bindsym $mod+Return exec alacritty
+bindsym $mod+Shift+Return exec alacritty -t 'alacritty-floating'
+for_window [title="^alacritty-floating$"] floating enable, resize set 1280 720, move position center
+bindsym $mod+Shift+q kill
+bindsym $mod+d exec --no-startup-id rofi -theme ~/dotfiles/rofi/launcher/config.rasi -show drun
+bindsym $mod+Ctrl+m exec pavucontrol
+# make a rofi setup for that
+bindsym $mod+Shift+s exec maim -s | xclip -selection clipboard -t image/png
+# need to create a desktop app
+bindsym $mod+Ctrl+l exec lvim
+
+
+# Workspace and system management
+
+
+# lock screen
+bindsym $mod+p exec --no-startup-id ~/dotfiles/i3/.config/i3/scripts/lock.sh
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# workspace back and forth (with/without active container)
+workspace_auto_back_and_forth yes
+bindsym $mod+b workspace back_and_forth
+bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+
+# split orientation
+bindsym $mod+g split h;exec notify-send 'tile horizontally'
+bindsym $mod+v split v;exec notify-send 'tile vertically'
+bindsym $mod+q split toggle
+
+# toggle fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# toggle sticky
+# bindsym $mod+Shift+s sticky toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+# navigate workspaces next / previous
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Ctrl+Left workspace prev
+
+# workspace names
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+
+workspace $ws1 output $SECONDARY
+workspace $ws2 output $SECONDARY
+workspace $ws3 output $SECONDARY
+workspace $ws4 output $SECONDARY
+workspace $ws5 output $SECONDARY
+workspace $ws6 output $PRIMARY
+workspace $ws7 output $PRIMARY
+workspace $ws8 output $PRIMARY
+workspace $ws9 output $PRIMARY
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+
+# Move focused container to workspace
+bindsym $mod+Ctrl+1 move container to workspace $ws1
+bindsym $mod+Ctrl+2 move container to workspace $ws2
+bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
+bindsym $mod+Ctrl+9 move container to workspace $ws9
+
+# Move to workspace with focused container
+bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+ShiA ft+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
+
+
+# assign app to workspace
+assign [class="Slack"] $ws1
+assign [class="Spotify"] $ws5
+assign [class="(?i)obsidian"] $ws3
+assign [class="(?i)rider"] $ws7
+for_window [class="feh"] floating enable
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+
+# Set shut down, restart and locking features
+bindsym $mod+0 exec ~/dotfiles/rofi/powermenu/powermenu.sh
+#bindsym $mod+0 mode "$mode_system"
+set $mode_system e) Exit, r) Reboot, Shift+s) Shutdown
+mode "$mode_system" {
+    bindsym e exec --no-startup-id i3-msg exit
+    bindsym r exec --no-startup-id systemctl reboot
+    bindsym Shift+s exec --no-startup-id systemctl poweroff
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        status_command i3status
+}
+
+
+# Style
+
+
+default_border pixel 1
+default_floating_border none
+hide_edge_borders none
+
+
+# target                 title    bg    text   	indicator  border
+client.focused           #57BA37     #121212 #D0D0D0  #B7CBF4 	#57BA37
+client.focused_inactive  #CF73E6   #121212 #D0D0D0  #B7CBF4 	#CF73E6  
+client.unfocused         #CF73E6   #121212 #D0D0D0  #B7CBF4 	#CF73E6  
+client.urgent            #D71A1A    	#121212 #D71A1A	 #EEEEEE  #D71A1A
+client.placeholder       #EEEEEE #121212 #D0D0D0  #EEEEEE  #EEEEEE
+client.background        #121212
+
+# Gaps
+
+
+# set inner/outer gaps
+gaps inner 14
+gaps outer -2
+
+
+# Smart gaps (gaps used if only more than one container on the workspace)
+smart_gaps on
+
+
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+smart_borders on

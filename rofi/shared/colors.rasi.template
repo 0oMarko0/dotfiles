@@ -1,0 +1,8 @@
+* {
+    background:     {{.Background}};
+    background-alt: {{.BlackBright}};
+    foreground:     {{.Foreground}};
+    selected:       {{.Magenta}};
+    active:         {{.Green}};
+    urgent:         {{.Red}};
+}

@@ -1,0 +1,92 @@
+font:
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Regular
+  bold:
+    family: JetBrainsMono Nerd Font
+    style: Bold
+  italic:
+    family: JetBrainsMono Nerd Font
+    style: Italic
+  bold_italic:
+    family: JetBrainsMono Nerd Font
+    style: Bold Italic
+
+window:
+  padding:
+    x: 20
+    y: 20
+  dynamic_padding: true
+
+colors:
+    primary:
+        background: "#121212"
+        foreground: "#D0D0D0"
+        dim_foreground: "#D0D0D0"
+        bright_foreground: "#D0D0D0"
+    cursor:
+        text: "#121212"
+        cursor: "#CF73E6"
+    vi_mode_cursor:
+        text: "#D0D0D0"
+        cursor: "#CF73E6"
+
+    # Search colors
+    search:
+        matches:
+            foreground: "#121212"
+            background: "#EEEEEE"
+        focused_match:
+            foreground: "#121212"
+            background: "#57BA37"
+        footer_bar:
+            foreground: "#121212"
+            background: "#EEEEEE"
+
+    # Keyboard regex hints
+    hints:
+        start:
+            foreground: "#121212"
+            background: "#F0D50C"
+        end:
+            foreground: "#121212"
+            background: "#EEEEEE"
+
+    # Selection colors
+    selection:
+        text: "#121212"
+        background: "#D0D0D0"
+
+    normal:
+        black: "#282828"
+        red: "#D71A1A"
+        green: "#57BA37"
+        yellow: "#F0D50C"
+        blue: "#91AADF"
+        magenta: "#CF73E6"
+        cyan: "#B7CBF4"
+        white: "#DEDEDE"
+
+    bright:
+        black: "#262626"
+        red: "#FF0000"
+        green: "#D8FA3B"
+        yellow: "#E7C547"
+        blue: "#B7CBF4"
+        magenta: "#B77EE0"
+        cyan: "#A9C1DE"
+        white: "#EEEEEE"
+
+    dim:
+        black: "#282828"
+        red: "#D71A1A"
+        green: "#57BA37"
+        yellow: "#F0D50C"
+        blue: "#91AADF"
+        magenta: "#CF73E6"
+        cyan: "#B7CBF4"
+        white: "#DEDEDE"
+
+    indexed_colors:
+        - { index: 16, color: "#FAB387" }
+        - { index: 17, color: "#F5E0DC" }
