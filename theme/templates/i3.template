@@ -3,18 +3,23 @@ set $mod Mod4
 # Monitors variable
 set $LAPTOP eDP-1
 # Home
-set $PRIMARY DP-2
-set $SECONDARY DP-3
-# Work
-#set $PRIMARY DP-2-1
+#set $PRIMARY DP-2
 #set $SECONDARY DP-3
+# Work
+set $PRIMARY DP-2-1
+set $SECONDARY DP-3
 
 
 font pango:JetBrainsMono Nerd Font 10
 
 exec_always --no-startup-id xrandr --output eDP-1 --off
-exec_always --no-startup-id xrandr --output $PRIMARY --mode 2560x1440 --rate 144.0
-exec_always --no-startup-id xrandr --output $SECONDARY --mode 1920x1080
+# Work
+exec_always --no-startup-id xrandr --output $PRIMARY --mode 2560x1440 --rate 60.00
+exec_always --no-startup-id xrandr --output $SECONDARY --mode 2560x1440 --rate 60.00
+
+#exec_always --no-startup-id xrandr --output $PRIMARY --mode 2560x1440 --rate 144.0
+#exec_always --no-startup-id xrandr --output $SECONDARY --mode 1920x1080
+
 exec_always --no-startup-id xrandr --output $SECONDARY --left-of $PRIMARY
 
 
@@ -29,10 +34,9 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id nm-applet
 exec --no-startup-id start-pulseaudio-x11
 exec --no-startup-id pa-applet
-#exec --no-startup-id slack
-#exec --no-startup-id spotify
-#exec --no-startup-id firefox
-#exec --no-startup-id obsidian
+exec --no-startup-id slack
+exec --no-startup-id spotify
+exec --no-startup-id obsidian
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -46,7 +50,8 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id rofi -theme ~/dotfiles/rofi/launcher/config.rasi -show drun
 bindsym $mod+Ctrl+m exec pavucontrol
 # make a rofi setup for that
-bindsym $mod+Shift+s exec maim -s | xclip -selection clipboard -t image/png
+# bindsym $mod+Shift+s exec maim -s | xclip -selection clipboard -t image/png
+bindsym $mod+Shift+s exec maim -s --hidecursor ~/Pictures/Screenshots/$(date +%Y-%b-%d--%H-%M-%S_maim | tr A-Z a-z).png;
 # need to create a desktop app
 bindsym $mod+Ctrl+l exec lvim
 
@@ -172,16 +177,18 @@ bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
 bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
-bindsym $mod+ShiA ft+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 
 
 # assign app to workspace
 assign [class="Slack"] $ws1
+assign [class="Firefox"] $ws2
 assign [class="Spotify"] $ws5
 assign [class="(?i)obsidian"] $ws3
 assign [class="(?i)rider"] $ws7
+assign [class="(?i)intellij"] $ws7
 for_window [class="feh"] floating enable
 
 # resize window (you can also use the mouse for that)

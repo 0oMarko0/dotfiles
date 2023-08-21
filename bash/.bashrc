@@ -115,12 +115,38 @@ if ! shopt -oq posix; then
 fi
 
 
+
+
 alias vim="nvim"
 alias config-i3="nvim ~/dotfiles/theme/templates/i3.template"
 alias config-bash="nvim ~/dotfiles/bash/.bashrc"
 alias config-alacritty="nvim ~/dotfiles/theme/templates/alacritty.template"
 alias ls="ls -la --color=auto"
 alias dir="dir --color=auto"
+alias home="cd ~"
+alias git-work="ssh-add -D && ssh-add ~/.ssh/work"
+alias git-perso="ssh-add -D && ssh-add ~/.ssh/perso"
+alias git-clean="git branch | grep -v 'master\|main\|develop' | xargs git branch -D > /dev/null | echo 'Done'"
+
+# Coveo alias
+alias wvar="tgf write-tf-variables"
+alias sdm-login="echo -e "mogagnon@coveo.com" | sdm login"
+alias ecr-login-tgf="aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 458176070654.dkr.ecr.us-east-1.amazonaws.com/tgf"
+alias ecr-login="aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 458176070654.dkr.ecr.us-east-1.amazonaws.com/cloud/proxy"
+alias ecr-node="aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 64790157154.dkr.ecr.us-east-1.amazonaws.com"
+alias work="cd ~/Work"
+alias tgf-stg="tgf plan-all -var env=stg --profile stg"
+
+export PATH=$PATH:/usr/local/go/bin:$HOME/dotnet:$HOME/bin
+export DOTNET_ROOT=$HOME/dotnet
+export GITHUB_TOKEN="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"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
 
 
-export PATH=$PATH:/usr/local/go/bin
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
