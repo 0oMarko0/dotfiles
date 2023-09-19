@@ -118,7 +118,7 @@ fi
 
 
 alias vim="nvim"
-alias config-i3="nvim ~/dotfiles/theme/templates/i3.template"
+alias config-i3="nvim ~/dotfiles/i3/.config/i3/i3.template"
 alias config-bash="nvim ~/dotfiles/bash/.bashrc"
 alias config-alacritty="nvim ~/dotfiles/theme/templates/alacritty.template"
 alias ls="ls -la --color=auto"
@@ -136,10 +136,18 @@ alias ecr-login="aws ecr get-login-password --region us-east-1 | docker login --
 alias ecr-node="aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 64790157154.dkr.ecr.us-east-1.amazonaws.com"
 alias work="cd ~/Work"
 alias tgf-stg="tgf plan-all -var env=stg --profile stg"
+alias monitor="xrandr -q | grep ' connected' | cut -d ' ' -f1"
+alias java-11="sdk use java 11.0.20-amzn"
+alias java-17="sdk use java 17.0.8-amzn"
+alias vpnc="forticlient vpn connect 'Coveo Full VPN' -u $USER"
+alias vpnd="forticlient vpn disconnect"
+alias vpns="fosticlient status"
 
-export PATH=$PATH:/usr/local/go/bin:$HOME/dotnet:$HOME/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin:$HOME/dotnet:$HOME/bin:$GOROOT/bin:$GOPATH/bin
 export DOTNET_ROOT=$HOME/dotnet
 export GITHUB_TOKEN="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"
+export TEST="yolo"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -150,3 +158,15 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# pnpm
+export PNPM_HOME="/home/mogagnon/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+. "$HOME/.cargo/env"

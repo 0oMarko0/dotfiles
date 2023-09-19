@@ -3,11 +3,11 @@ set $mod Mod4
 # Monitors variable
 set $LAPTOP eDP-1
 # Home
-#set $PRIMARY DP-2
-#set $SECONDARY DP-3
-# Work
-set $PRIMARY DP-2-1
+set $PRIMARY DP-2
 set $SECONDARY DP-3
+# Work
+#set $PRIMARY DP-3-1
+#set $SECONDARY DP-2
 
 
 font pango:JetBrainsMono Nerd Font 10
@@ -17,8 +17,9 @@ exec_always --no-startup-id xrandr --output eDP-1 --off
 exec_always --no-startup-id xrandr --output $PRIMARY --mode 2560x1440 --rate 60.00
 exec_always --no-startup-id xrandr --output $SECONDARY --mode 2560x1440 --rate 60.00
 
-#exec_always --no-startup-id xrandr --output $PRIMARY --mode 2560x1440 --rate 144.0
-#exec_always --no-startup-id xrandr --output $SECONDARY --mode 1920x1080
+# Home
+exec_always --no-startup-id xrandr --output $PRIMARY --mode 2560x1440 --rate 144.0
+exec_always --no-startup-id xrandr --output $SECONDARY --mode 1920x1080 --rate 74.97
 
 exec_always --no-startup-id xrandr --output $SECONDARY --left-of $PRIMARY
 
@@ -188,10 +189,11 @@ assign [class="Firefox"] $ws2
 assign [class="Spotify"] $ws5
 assign [class="(?i)obsidian"] $ws3
 assign [class="(?i)rider"] $ws7
-assign [class="(?i)intellij"] $ws7
-for_window [class="feh"] floating enable
+assign [class="^jetbrain-idea*"] $ws8
 
-# resize window (you can also use the mouse for that)
+for_window [title="^Authentication*"] floating enable
+for_window [class="^Authentication*"] move absolute position center
+
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 

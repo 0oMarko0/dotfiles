@@ -1,10 +1,10 @@
 {
   "i3": {
-    "template": "~/dotfiles/theme/templates/i3.template",
+    "template": "~/dotfiles/i3/.config/i3/i3.template",
     "destination": "~/dotfiles/i3/.config/i3/config"
   },
   "alacritty": {
-    "template": "~/dotfiles/theme/templates/alacritty.template",
+    "template": "~/dotfiles/alacritty/.config/alacritty/alacritty.template",
     "destination": "~/dotfiles/alacritty/.config/alacritty/alacritty.yml"
   },
   "startpage": {
@@ -14,5 +14,9 @@
   "rofi": {
     "template": "~/dotfiles/rofi/shared/colors.rasi.template",
     "destination": "~/dotfiles/rofi/shared/colors.rasi"
+  },
+  "polybar-murz": {
+    "template": "~/dotfiles/polybar/.config/polybar/murz/colors.ini.template",
+    "destination": "~/dotfiles/polybar/.config/polybar/murz/colors.ini"
   }
 }

@@ -1,0 +1,23 @@
+[colors]
+bg = {{.Background}}
+bg-alt = {{.BlackBright}}
+fg = {{.Foreground}}
+fg-alt = {{.WhiteBright}}
+
+blue = {{.Blue}}
+cyan = {{.Cyan}}
+green = {{.Green}}
+orange = {{.YellowBright}}
+pink = {{.MagentaBright}}
+purple = {{.Magenta}}
+red = {{.Red}}
+yellow = {{.Yellow}}
+
+trans = #00000000
+semi-trans-black = #cc000000
+
+shade-1 = #5D5E72
+shade-2 = #7A7B8C
+shade-3 = #A0A0AB
+shade-4 = #CACACE
+shade-5 = #F8F8F8
