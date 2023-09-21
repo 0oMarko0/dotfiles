@@ -3,11 +3,11 @@ set $mod Mod4
 # Monitors variable
 set $LAPTOP eDP-1
 # Home
-set $PRIMARY DP-2
-set $SECONDARY DP-3
+#set $PRIMARY DP-2
+#set $SECONDARY DP-3
 # Work
-#set $PRIMARY DP-3-1
-#set $SECONDARY DP-2
+set $PRIMARY DP-2-1
+set $SECONDARY DP-3
 
 
 font pango:JetBrainsMono Nerd Font 10
@@ -18,8 +18,8 @@ exec_always --no-startup-id xrandr --output $PRIMARY --mode 2560x1440 --rate 60.
 exec_always --no-startup-id xrandr --output $SECONDARY --mode 2560x1440 --rate 60.00
 
 # Home
-exec_always --no-startup-id xrandr --output $PRIMARY --mode 2560x1440 --rate 144.0
-exec_always --no-startup-id xrandr --output $SECONDARY --mode 1920x1080 --rate 74.97
+#exec_always --no-startup-id xrandr --output $PRIMARY --mode 2560x1440 --rate 144.0
+#exec_always --no-startup-id xrandr --output $SECONDARY --mode 1920x1080 --rate 74.97
 
 exec_always --no-startup-id xrandr --output $SECONDARY --left-of $PRIMARY
 

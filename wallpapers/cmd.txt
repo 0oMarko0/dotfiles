@@ -1,0 +1,1 @@
+convert _lock.png gandalf.png -gravity south -geometry 400x400 -composite output.png

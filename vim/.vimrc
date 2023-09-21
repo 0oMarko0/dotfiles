@@ -1,3 +1,6 @@
+" Space leader
+let mapleader = " "
+
 " Disable vi compatibility
 set nocompatible
 " Do not save backup
@@ -16,4 +19,11 @@ filetype plugin on
 filetype indent on
 
 syntax on
+
+" keymaps
+nnoremap <silent> [b :bbrevious<CR>
+nnoremap <silent> ]b :bbrevious<CR>
+nnoremap <silent> [B :bbrevious<CR>
+nnoremap <silent> ]B :bbrevious<CR>
+nnoremap <Leader>s :%s/\<C-r><C-w>\>/
 

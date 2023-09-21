@@ -117,7 +117,6 @@ fi
 
 
 
-alias vim="nvim"
 alias config-i3="nvim ~/dotfiles/i3/.config/i3/i3.template"
 alias config-bash="nvim ~/dotfiles/bash/.bashrc"
 alias config-alacritty="nvim ~/dotfiles/theme/templates/alacritty.template"
@@ -147,7 +146,6 @@ export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$HOME/dotnet:$HOME/bin:$GOROOT/bin:$GOPATH/bin
 export DOTNET_ROOT=$HOME/dotnet
 export GITHUB_TOKEN="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"
-export TEST="yolo"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
