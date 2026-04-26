@@ -1,0 +1,48 @@
+[window]
+opacity = 0.70
+padding = { x = 8, y = 8 }
+dynamic_padding = true
+decorations = "None"
+
+[font]
+normal = { family = "BlexMono Nerd Font", style = "Regular" }
+bold = { family = "BlexMono Nerd Font", style = "Bold" }
+italic = { family = "BlexMono Nerd Font", style = "Italic" }
+bold_italic = { family = "BlexMono Nerd Font", style = "Bold Italic" }
+size = 11.5
+offset = { y = 2 }
+
+[colors.primary]
+background = "#16181a"
+foreground = "#ffffff"
+
+[colors.cursor]
+text = "CellBackground"
+cursor = "#5eff6c"
+
+[colors.selection]
+text = "CellBackground"
+background = "#5eff6c"
+
+[colors.normal]
+black   = "#1e2124"
+red     = "#ff6e5e"
+green   = "#5eff6c"
+yellow  = "#f1ff5e"
+blue    = "#5ea1ff"
+magenta = "#ff5ef1"
+cyan    = "#5ef1ff"
+white   = "#7b8496"
+
+[colors.bright]
+black   = "#3c4048"
+red     = "#ff5ea0"
+green   = "#5eff6c"
+yellow  = "#ffbd5e"
+blue    = "#5ea1ff"
+magenta = "#bd5eff"
+cyan    = "#5ef1ff"
+white   = "#ffffff"
+
+[colors]
+draw_bold_text_with_bright_colors = true
