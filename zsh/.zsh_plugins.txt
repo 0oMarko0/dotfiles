@@ -1,8 +1,10 @@
 mattmc3/ez-compinit
+zsh-users/zsh-completions
+
 romkatv/powerlevel10k
 jeffreytse/zsh-vi-mode
+
 Aloxaf/fzf-tab
 
-zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-autosuggestions
-zsh-users/zsh-completions
+zsh-users/zsh-syntax-highlighting

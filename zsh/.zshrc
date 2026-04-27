@@ -20,17 +20,19 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 setopt hist_reduce_blanks
 
+
+source '/usr/share/zsh-antidote/antidote.zsh'
+antidote load ~/.zsh_plugins.txt
+
 # Completion styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
+
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-
-autoload -U compinit && compinit
-
-source '/usr/share/zsh-antidote/antidote.zsh'
-antidote load ~/.zsh_plugins.txt
+zstyle ':fzf-tab:complete:*:*' fzf-flags --height=40% --layout=reverse
+zstyle ':fzf-tab:complete:*:options' fzf-preview 'echo $desc'
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8

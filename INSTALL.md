@@ -52,4 +52,3 @@ since there's not default
 - [eza](https://github.com/eza-community/eza/tree/main) is a new ls with more feature
 - [waybar](https://github.com/alexays/waybar) to replace swaybar
 - [btop](https://github.com/aristocratos/btop) interesting alternative to htop
-- How to get the options for a command in the shell with fzf? 
