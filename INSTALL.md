@@ -23,6 +23,10 @@ exec sway --unsupported-gpu
 ```
 
 # zsh
+Install antidote, the [plugin manager](https://antidote.sh/install)
+```
+yay -S zsh-antidote
+```
 
 
 # Font
@@ -44,3 +48,5 @@ It has a transparency-first deisgn principle, meaning that all decision are made
 A dark and light Neovim theme written in fennel, inspired by IBM Carbon. Need more work for other tool
 since there's not default
  
+# Idea
+- [eza](https://github.com/eza-community/eza/tree/main) is a new ls with more feature

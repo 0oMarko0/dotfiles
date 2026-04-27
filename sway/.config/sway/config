@@ -194,22 +194,24 @@ bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
 # Special key to take a screenshot with grim
 bindsym Print exec grim
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
 bar {
     position top
 
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    status_command while date +'%Y-%m-%d %H:%M'; do sleep 1; done
 
     colors {
+        background #16181a
         statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        separator  #3c4048
+
+        # Workspace states
+        focused_workspace  #5eff6c #5eff6c #16181a
+        active_workspace   #3c4048 #3c4048 #ffffff
+        inactive_workspace #16181a #16181a #7b8496
+        urgent_workspace   #ff6e5e #ff6e5e #ffffff
+
+        # Binding mode (resize mode etc)
+        binding_mode #ffbd5e #ffbd5e #16181a
     }
 }
-
 include /etc/sway/config.d/*
