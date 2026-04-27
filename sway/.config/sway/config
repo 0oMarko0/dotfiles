@@ -165,6 +165,8 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
+# lock the screen
+bindsym $mod+p exec swaylock -f -i ~/dotfiles/wallpaper/wallpaper_01_lock.jpg
 
 mode "resize" {
     # left will shrink the containers width
