@@ -25,9 +25,16 @@ exec sway --unsupported-gpu
 # zsh
 Install antidote, the [plugin manager](https://antidote.sh/install)
 ```
+sudo pacman -S fzf
 yay -S zsh-antidote
 ```
 
+# tmux
+You'll need a plugin manager, follow the official installation for [TPM tmux plugin manager](https://github.com/tmux-plugins/tpm)
+
+
+# nvim
+To make vim style navigation work with tmux you'll need the `christoomey/vim-tmux-navigator`
 
 # Font
 Use a [nerdfont](https://www.nerdfonts.com/font-downloads) which is easily discoverable with pacman + fzf
@@ -52,3 +59,4 @@ since there's not default
 - [eza](https://github.com/eza-community/eza/tree/main) is a new ls with more feature
 - [waybar](https://github.com/alexays/waybar) to replace swaybar
 - [btop](https://github.com/aristocratos/btop) interesting alternative to htop
+- [tmux catppuccin](https://github.com/catppuccin/tmux/discussions/317)
