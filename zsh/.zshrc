@@ -44,11 +44,14 @@ export TERM=alacritty
 [[ ! -f ~/dotfiles/zsh/.p10k.zsh ]] || source ~/dotfiles/zsh/.p10k.zsh
 
 eval "$(fzf --zsh)"
-
 alias ls='ls -la --color'
-
 
 # set go path if go is installed
 if command -v go &> /dev/null; then
   export PATH=$PATH:$(go env GOPATH)/bin
 fi
+
+eval "$(mise activate zsh)"
+
+# machine-local config and secrets
+[[ ! -f ~/.zshrc.local ]] || source ~/.zshrc.local
