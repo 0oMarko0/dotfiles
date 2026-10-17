@@ -46,3 +46,9 @@ export TERM=alacritty
 eval "$(fzf --zsh)"
 
 alias ls='ls -la --color'
+
+
+# set go path if go is installed
+if command -v go &> /dev/null; then
+  export PATH=$PATH:$(go env GOPATH)/bin
+fi
